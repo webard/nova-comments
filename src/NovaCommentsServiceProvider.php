@@ -53,7 +53,7 @@ class NovaCommentsServiceProvider extends ServiceProvider
      */
     protected function nova(): void
     {
-        Nova::resources([Comment::class]);
+        // Nova::resources([Comment::class]);
 
         Nova::serving(
             function (): void {

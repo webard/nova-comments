@@ -20,52 +20,40 @@
 
 <script>
 
-    export default {
-        props: {
-            comment: {
-                type: Object,
-                required: true
-            }
+import find from 'lodash.find';
+
+export default {
+    props: {
+        comment: {
+            type: Object,
+            required: true
+        }
+    },
+
+    computed: {
+        commentString() {
+            return find(this.comment.fields, { attribute: 'comment' }).value;
         },
 
-        computed: {
-            commentString() {
-                return _.find(this.comment.fields, { attribute: 'comment' }).value;
-            },
+        commenter() {
+            return find(this.comment.fields, { attribute: 'commenter' }).value;
+        },
 
-            commenter() {
-                return _.find(this.comment.fields, { attribute: 'commenter' }).value;
-            },
+        commenterUrl() {
+            let commenterId = find(this.comment.fields, { attribute: 'commenter' }).belongsToId;
 
-            commenterUrl() {
-                let commenterId = _.find(this.comment.fields, { attribute: 'commenter' }).belongsToId;
+            return `${Nova.config("base")}/resources/users/${commenterId}`;
+        },
 
-                return `${Nova.config("base")}/resources/users/${commenterId}`;
-            },
+        date() {
+            let date = find(this.comment.fields, { attribute: 'created_at' });
 
-            date() {
-                let now = moment();
-                let date = moment.utc(_.find(this.comment.fields, { attribute: 'created_at' }).value)
-                    .tz(moment.tz.guess());
+            return `on ${date.value}`;
+        },
 
-                if (date.isSame(now, 'minute')) {
-                    return 'just now';
-                }
-
-                if (date.isSame(now, 'day')) {
-                    return `at ${date.format('LT')}`;
-                }
-
-                if (date.isSame(now, 'year')) {
-                    return `on ${date.format('MMM D')}`;
-                }
-
-                return `on ${date.format('ll')}`;
-            },
-
-            hasCommenter() {
-                return Boolean(this.commenter);
-            }
+        hasCommenter() {
+            return Boolean(this.commenter);
         }
     }
+}
 </script>

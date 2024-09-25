@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "nova:install": "npm --prefix='../../vendor/laravel/nova' ci"
+        "nova:install": "npm --prefix='./vendor/laravel/nova' ci"
     },
     "devDependencies": {
         "@vue/compiler-sfc": "^3.2.22",
@@ -17,6 +17,7 @@
         "vue-loader": "^16.8.3"
     },
     "dependencies": {
+        "lodash.find": "^4.6.0",
         "moment-timezone": "^0.5.38"
     }
 }
