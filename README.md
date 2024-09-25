@@ -26,7 +26,7 @@ For older version of Nova, use the tagged version [1.0.2](https://github.com/kir
 You can install this package in a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
-composer require kirschbaum-development/nova-comments
+composer require webard/nova-comments
 ```
 
 Next, we need to run migrations. Auto-discovery of this package's service provider helps with that!
