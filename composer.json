@@ -1,5 +1,5 @@
 {
-    "name": "kirschbaum-development/nova-comments",
+    "name": "webard/nova-comments",
     "description": "A Laravel Nova resource for commenting on model.",
     "keywords": [
         "laravel",
@@ -11,7 +11,7 @@
             "url": "https://nova.laravel.com"
         }
     ],
-    "homepage": "https://github.com/kirschbaum-development/nova-comments",
+    "homepage": "https://github.com/webard/nova-comments",
     "license": "MIT",
     "authors": [
         {
@@ -54,7 +54,7 @@
             "@install:tools",
             "./tools/pint/vendor/bin/pint"
         ],
-        "lint:check":[
+        "lint:check": [
             "@install:tools",
             "./tools/pint/vendor/bin/pint --test -v"
         ]

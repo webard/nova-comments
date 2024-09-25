@@ -1,5 +1,7 @@
 # A commenting resource tool for Nova apps
 
+**NOTE**: This has been forked from [kirschbaum-development/nova-comments](https://github.com/kirschbaum-development/nova-comments)
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kirschbaum-development/nova-comments.svg)](https://packagist.org/packages/kirschbaum-development/nova-comments)
 [![Total Downloads](https://img.shields.io/packagist/dt/kirschbaum-development/nova-comments.svg)](https://packagist.org/packages/kirschbaum-development/nova-comments)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d3cc58ebefe2480da123f95d43ce1fcc)](https://app.codacy.com/app/Kirschbaum/nova-comments?utm_source=github.com&utm_medium=referral&utm_content=kirschbaum-development/nova-comments&utm_campaign=Badge_Grade_Dashboard)
@@ -7,9 +9,11 @@
 This package contains an inline commenting form for any resource to easily add comments. Think a simple version of Disqus for Nova!
 
 ###### Commenter Tool
+
 ![screenshot of the commenter resource tool](https://raw.githubusercontent.com/kirschbaum-development/nova-comments/master/screenshots/commenter.png)
 
 ###### Simple Comment Panel
+
 ![screenshot of the comments panel](https://raw.githubusercontent.com/kirschbaum-development/nova-comments/master/screenshots/comments-panel.png)
 
 ## Requirements
@@ -39,7 +43,7 @@ use KirschbaumDevelopment\NovaComments\Commentable;
 class Post extends Model
 {
     use Commentable;
-    
+
     // ...
 }
 ```
@@ -49,6 +53,7 @@ If you would like to publish the config for this package, run:
 ```bash
 php artisan vendor:publish
 ```
+
 And choose the provider for this package: `KirschbaumDevelopment\NovaComments\NovaCommentsServiceProvider`
 
 This package requires that it has a commenter, which is simply a `User`. Nova Comments automatically defaults to the `App\Nova\User` resource, but can easily be changed in the publishable config file.
@@ -71,12 +76,12 @@ use KirschbaumDevelopment\NovaComments\Commenter;
 class Post extends Resource
 {
     // ...
-    
+
     public function fields(Request $request)
     {
         return [
             // ...
-            
+
             new Commenter(),
 
             // ...
@@ -99,12 +104,12 @@ use KirschbaumDevelopment\NovaComments\Commenter;
 class Post extends Resource
 {
     // ...
-    
+
     public function fields(Request $request)
     {
         return [
             // ...
-            
+
             new CommentsPanel(),
 
             // ...
@@ -157,7 +162,7 @@ If you discover any security related issues, please email brandon@kirschbaumdeve
 
 ## Credits
 
-- [Brandon Ferens](https://github.com/brandonferens)
+-   [Brandon Ferens](https://github.com/brandonferens)
 
 ## Sponsorship
 
